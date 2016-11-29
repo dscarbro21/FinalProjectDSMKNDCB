@@ -71,8 +71,8 @@ public class Tests {
 	public void testLaunch() {
 		launcher.setAngle(315);
 		launcher.setPower(10);
-		launcher.setPosition(10,10);
-		ball.setPosition(10,10);
+		launcher.setPosition(new Point(10,10));
+		ball.setPosition(new Point(10,10));
 		ball.launch(launcher);
 		
 		t = 0;
@@ -89,7 +89,7 @@ public class Tests {
 	
 	@Test
 	public void testReset() {
-		ball.setPosition(3,1);
+		ball.setPosition(new Point(3,1));
 		ball.setVelocity(300,6);
 		t = 0;
 		
@@ -98,11 +98,11 @@ public class Tests {
 			++t;
 		}
 		
-		game.reset();
+		ball.reset();
 		
-		assertEquals(ball.getXPosition() == 3);
-		assertEquals(ball.getYPosition() == 1);
-		assertEquals(ball.getHits() == 0);
+		assertEquals(ball.getXPosition(), 3);
+		assertEquals(ball.getYPosition(), 1);
+		assertEquals(ball.getHits(), 0);
 	}
 	
 }

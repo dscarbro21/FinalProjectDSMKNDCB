@@ -7,14 +7,17 @@ public class Ball {
 	private int xVelocity;
 	private int yVelocity;
 	private Point position;
+	private Point initPosition;
 	private int hits;
+	
+	public final int LIFE = 80;
 	
 	public Ball(int r, Color c) {
 		xVelocity = 0;
 		yVelocity = 0;
 		radius = r;
 		color = c;
-		hits = 80;
+		hits = 0;
 	}
 	
 	public void setRadius(int r) {
@@ -23,6 +26,7 @@ public class Ball {
 	
 	public void setPosition(Point p) {
 		position = p;
+		initPosition = p;
 	}
 	
 	public boolean checkCollision() {		// EDIT LATER
@@ -56,5 +60,28 @@ public class Ball {
 	
 	public boolean didWin() {
 		return false;
+	}
+	
+	public void launch(Launcher launcher)
+	{
+		
+		double temp = (launcher.getAngle() * (Math.PI / 180));
+		xVelocity = (int) Math.cos(temp) * launcher.getPower();
+		yVelocity = (int) Math.sin(temp) * launcher.getPower();
+		
+	}
+
+	public int getXPosition() {
+		return position.x;
+	}
+	
+	public int getYPosition() {
+		return position.y;
+	}
+
+	public void reset() {
+		position = initPosition;
+		hits = 0;
+		
 	}
 }

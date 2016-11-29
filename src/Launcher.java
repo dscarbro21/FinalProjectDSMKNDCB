@@ -10,5 +10,29 @@ public class Launcher {
 		this.angle = angle;
 		this.power = power;
 	}
+	
+	public void setAngle(int angle)
+	{
+		this.angle = angle;
+	}
+	
+	public void setPower(int power)
+	{
+		this.power = power;
+	}
+	
+	public void setPosition(Point pos)
+	{
+		position = pos;
+	}
+
+	public int getAngle() {
+		
+		return angle;
+	}
+
+	public int getPower() {
+		return power;
+	}
 
 }
