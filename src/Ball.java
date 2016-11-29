@@ -26,7 +26,6 @@ public class Ball {
 	
 	public void setPosition(Point p) {
 		position = p;
-		initPosition = p;
 	}
 	
 	public boolean checkCollision() {		// EDIT LATER
@@ -66,22 +65,28 @@ public class Ball {
 	{
 		
 		double temp = (launcher.getAngle() * (Math.PI / 180));
-		xVelocity = (int) Math.cos(temp) * launcher.getPower();
-		yVelocity = (int) Math.sin(temp) * launcher.getPower();
+		xVelocity = (int) (Math.cos(temp) * launcher.getPower());
+		yVelocity = -(int) (Math.sin(temp) * launcher.getPower()); //Negative sign is needed to account for coordinate system of JFrame starting in top left corner
 		
 	}
 
 	public int getXPosition() {
-		return position.x;
+		return (int) position.getX();
 	}
 	
 	public int getYPosition() {
-		return position.y;
+		return (int) position.getY();
 	}
 
 	public void reset() {
 		position = initPosition;
 		hits = 0;
+		
+	}
+
+	public void setStartPosition(Point point) {
+		position = point;
+		initPosition = new Point(point);
 		
 	}
 }

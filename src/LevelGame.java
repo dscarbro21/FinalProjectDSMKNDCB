@@ -28,7 +28,7 @@ public class LevelGame extends JFrame {
 		return currentLevel;
 	}
 
-	
+
 	public static void main(String [] args) {
 		LevelGame gui = new LevelGame();
 		gui.setVisible(true);

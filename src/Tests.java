@@ -72,7 +72,7 @@ public class Tests {
 		launcher.setAngle(315);
 		launcher.setPower(10);
 		launcher.setPosition(new Point(10,10));
-		ball.setPosition(new Point(10,10));
+		ball.setStartPosition(new Point(10,10));
 		ball.launch(launcher);
 		
 		t = 0;
@@ -80,16 +80,17 @@ public class Tests {
 		while (t <= 2) {
 			ball.update();
 			t++;
+			System.out.println("Update \t" + ball.getYVelocity());
 		}
 		
-		assertEquals(30, ball.getXPosition());
-		assertEquals(30, ball.getYPosition());
+		assertTrue(Math.abs(30 - ball.getXPosition()) < 2);
+		assertTrue(Math.abs(30 - ball.getYPosition()) < 2);
 		
 	}
 	
 	@Test
 	public void testReset() {
-		ball.setPosition(new Point(3,1));
+		ball.setStartPosition(new Point(3,1));
 		ball.setVelocity(300,6);
 		t = 0;
 		
