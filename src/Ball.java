@@ -53,4 +53,8 @@ public class Ball {
 	public int getCollisionAngle() {		// EDIT LATER
 		return 45;
 	}
+	
+	public boolean didWin() {
+		return false;
+	}
 }

@@ -45,10 +45,10 @@ public class Tests {
 	public void testGoal() {
 		t = 0;
 		game.setLevel(1);
-		star.setPosition(Point(68,45));
+		star.setPosition(new Point(68,45));
 		star.setRadius(3);
 		ball.setRadius(30);
-		ball.setPosition(Point(20,20));
+		ball.setPosition(new Point(20,20));
 		assertFalse(ball.didWin());
 		
 		ball.setRadius(70);

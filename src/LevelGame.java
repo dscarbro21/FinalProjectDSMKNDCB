@@ -20,8 +20,12 @@ public class LevelGame extends JFrame {
 //		add(panel); 
 	}
 
-	public void ChangeLevel() {
-		currentLevel++;
+	public void setLevel(int l) {
+		currentLevel = l;
+	}
+	
+	public int getLevel() {
+		return currentLevel;
 	}
 
 	

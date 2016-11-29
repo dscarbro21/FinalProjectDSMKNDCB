@@ -10,5 +10,15 @@ public class Star {
 		color = c;
 		winRadius = r;
 	}
+	
+	public void setPosition(Point p) {
+		position = p;
+	}
+	
+	public void setRadius(int r) {
+		winRadius = r; 
+	}
+	
+	
 
 }
