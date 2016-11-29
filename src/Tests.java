@@ -1,13 +1,16 @@
 import static org.junit.Assert.*;
+
+import java.awt.Color;
+
 import org.junit.Test;
 
 
 public class Tests {
-	Ball ball = new Ball();
+	Ball ball = new Ball(3, Color.WHITE);
 	Wall wall = new Wall();
-	Star star = new Star();
+	Star star = new Star(2, Color.BLUE);
 	LevelGame game = new LevelGame();
-	Launcher launcher = new Launcher();
+	Launcher launcher = new Launcher(5, 5);
 	int t = 0;
 	
 	@Test
