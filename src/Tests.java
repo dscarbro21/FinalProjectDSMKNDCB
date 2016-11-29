@@ -80,7 +80,6 @@ public class Tests {
 		while (t <= 2) {
 			ball.update();
 			t++;
-			System.out.println("Update \t" + ball.getYVelocity());
 		}
 		
 		assertTrue(Math.abs(30 - ball.getXPosition()) < 2);
