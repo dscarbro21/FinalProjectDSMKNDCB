@@ -1,13 +1,13 @@
 import static org.junit.Assert.*;
 
-import java.awt.Color;
+import java.awt.*;
 
 import org.junit.Test;
 
 
 public class Tests {
 	Ball ball = new Ball(3, Color.WHITE);
-	Wall wall = new Wall();
+	Wall wall = new Wall(new Point(10,10), new Point(100,10));
 	Star star = new Star(2, Color.BLUE);
 	LevelGame game = new LevelGame();
 	Launcher launcher = new Launcher(5, 5);
@@ -15,16 +15,16 @@ public class Tests {
 	
 	@Test
 	public void testCollisions() {
-		wall.setPosition(Point(10,10),Point(100,10));
+		wall.setPosition(new Point(10,10), new Point(100,10));
 		ball.setRadius(20);
-		ball.setPosition(Point(60,60));
+		ball.setPosition(new Point(60,60));
 		assertFalse(ball.checkCollision());
 		
-		ball.setPosition(Point(30, 30));
+		ball.setPosition(new Point(30, 30));
 		assertTrue(ball.checkCollision());
 		assertTrue(ball.getHits() == 1);
 		
-		ball.setPosition(Point(10,60));
+		ball.setPosition(new Point(10,60));
 		ball.setVelocity(10, -10);
 		while(t <= 6) {
 			ball.update();

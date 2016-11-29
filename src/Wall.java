@@ -9,4 +9,9 @@ public class Wall {
 		pt1 = p1;
 		pt2 = p2;
 	}
+	
+	public void setPosition(Point p1, Point p2) {
+		pt1 = p1;
+		pt2 = p2;
+	}
 }
