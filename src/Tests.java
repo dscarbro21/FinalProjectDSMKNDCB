@@ -36,7 +36,7 @@ public class Tests {
 			else if (t > 3) {
 				assertTrue(ball.getYVelocity() > 0);
 				assertTrue(ball.getXVelocity() < 10);
-				assertTrue(ball.getCollisionAngle() == 315);
+				assertTrue(ball.getCollisionAngle() == 90);
 				assertTrue(ball.getHits() == 2);
 			}
 		}
