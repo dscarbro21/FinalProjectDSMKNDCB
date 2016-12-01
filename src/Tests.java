@@ -9,7 +9,7 @@ public class Tests {
 	Ball ball = new Ball(3, Color.WHITE);
 	Wall wall = new Wall(new Point(10,10), new Point(100,10));
 	Star star = new Star(2, Color.BLUE);
-	LevelGame game = new LevelGame();
+	LevelGame game = LevelGame.getInstance();
 	Launcher launcher = new Launcher(5, 5);
 	int t = 0;
 	
@@ -51,20 +51,21 @@ public class Tests {
 		ball.setPosition(new Point(20,20));
 		assertFalse(ball.didWin());
 		
-		ball.setRadius(70);
+		ball.setPosition(new Point(68,45));
 		assertTrue(ball.didWin());
 		
-		ball.setRadius(10);
-		ball.setVelocity(48,25);
-		
-		while (t <= 1) {
+		ball.setPosition(new Point(66,43));
+		ball.setVelocity(1,1);
+		while (t <= 1) 
+		{
 			ball.update();
-			++t;
-			if (t == 1) {
-				assertTrue(ball.didWin());
-				assertTrue(game.getLevel() == 2);
+			t++;
+			if (t == 200) 
+			{
+				fail("Never reaches the goal with a velocity of (1,1)");
 			}
 		}
+		assertTrue(game.getLevel() == 2);
 	}
 	
 	@Test

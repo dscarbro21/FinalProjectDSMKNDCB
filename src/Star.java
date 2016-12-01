@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Star {
 	
-	private Point position;
+	public static Point position;
 	private Color color;
 	private int winRadius;
 
@@ -18,6 +18,12 @@ public class Star {
 	public void setRadius(int r) {
 		winRadius = r; 
 	}
+
+	public Point getPosition() {
+		return position;
+	}
+	
+	
 	
 	
 

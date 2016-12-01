@@ -58,6 +58,13 @@ public class Ball {
 	}
 	
 	public boolean didWin() {
+		
+		if(position.equals(Star.position))
+		{
+			LevelGame.getInstance().nextLevel();
+			return true;
+		}
+		
 		return false;
 	}
 	
@@ -87,6 +94,15 @@ public class Ball {
 	public void setStartPosition(Point point) {
 		position = point;
 		initPosition = new Point(point);
-		
 	}
+
+	
+	//testing purposes
+	@Override
+	public String toString() {
+		return "Ball [radius=" + radius + ", position=" + position + ", initPosition=" + initPosition + "]";
+	}
+	
+	
+	
 }

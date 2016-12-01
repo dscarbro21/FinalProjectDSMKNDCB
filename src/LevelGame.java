@@ -1,11 +1,20 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class LevelGame extends JFrame {
-	private int currentLevel;
-	
 
-	public LevelGame() {
+public class LevelGame extends JFrame {
+	private int currentLevel = 1;
+
+	// variable used for singleton pattern
+	private static LevelGame theInstance = new LevelGame();
+	
+	
+	
+	public static LevelGame getInstance() {
+		return theInstance;
+	}
+
+	private LevelGame() {
 		currentLevel = 1;
 
 		setSize(900, 900);
@@ -20,8 +29,12 @@ public class LevelGame extends JFrame {
 //		add(panel); 
 	}
 
-	public void setLevel(int l) {
-		currentLevel = l;
+	public void nextLevel(){
+		currentLevel++;
+	}
+	
+	public void setLevel(int i){
+		currentLevel = i;
 	}
 	
 	public int getLevel() {
