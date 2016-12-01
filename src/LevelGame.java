@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
 public class LevelGame extends JFrame {
 	private int currentLevel = 1;
+	ArrayList<Wall> walls = new ArrayList<Wall>();
 
 	// variable used for singleton pattern
 	private static LevelGame theInstance = new LevelGame();
@@ -40,7 +43,13 @@ public class LevelGame extends JFrame {
 	public int getLevel() {
 		return currentLevel;
 	}
-
+	
+	public ArrayList<Wall> getWalls() {
+		return walls;
+	}
+	public void addWall(Wall w) {
+		walls.add(w);
+	}
 
 	public static void main(String [] args) {
 		LevelGame gui = new LevelGame();

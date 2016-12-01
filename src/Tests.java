@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class Tests {
 	Ball ball = new Ball(3, Color.WHITE);
-	Wall wall = new Wall(new Point(10,10), new Point(100,10));
+	Wall wall = new Wall(new Point(10,10), new Point(100,10), 'H');
 	Star star = new Star(2, Color.BLUE);
 	LevelGame game = LevelGame.getInstance();
 	Launcher launcher = new Launcher(5, 5);
@@ -15,16 +15,17 @@ public class Tests {
 	
 	@Test
 	public void testCollisions() {
+		game.addWall(wall);
 		wall.setPosition(new Point(10,10), new Point(100,10));
 		ball.setRadius(20);
 		ball.setPosition(new Point(60,60));
 		assertFalse(ball.checkCollision());
 		
-		ball.setPosition(new Point(30, 30));
+		ball.setPosition(new Point(30, 10));
 		assertTrue(ball.checkCollision());
 		assertTrue(ball.getHits() == 1);
 		
-		ball.setPosition(new Point(10,60));
+		ball.setPosition(new Point(10,40));
 		ball.setVelocity(10, -10);
 		while(t <= 6) {
 			ball.update();

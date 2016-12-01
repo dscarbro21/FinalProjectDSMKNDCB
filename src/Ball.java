@@ -12,6 +12,8 @@ public class Ball {
 	
 	public final int LIFE = 80;
 	
+	private LevelGame level = LevelGame.getInstance();
+	
 	public Ball(int r, Color c) {
 		xVelocity = 0;
 		yVelocity = 0;
@@ -29,6 +31,34 @@ public class Ball {
 	}
 	
 	public boolean checkCollision() {		// EDIT LATER
+		for (Wall w : level.getWalls()) {
+			if (w.getOrientation() == 'H') {
+				if (w.getPoint1().getY() >= position.getY() && w.getPoint1().getY() <= position.getY() + radius*2) {
+					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
+						hits++;
+						yVelocity = -yVelocity;
+						if (xVelocity < 0) { xVelocity += 1; }
+						else if (xVelocity > 0) { xVelocity -= 1; }
+						if (yVelocity < 0) { yVelocity += 1; }
+						else if (yVelocity > 0) { yVelocity -= 1; }
+						return true;
+					}
+				}
+			}
+			else if (w.getOrientation() == 'V') {
+				if (w.getPoint1().getX() >= position.getX() && w.getPoint1().getX() <= position.getX() + radius*2) {
+					if (position.getY() + radius*2 >= w.getPoint1().getY() && position.getY() <= w.getPoint2().getY()) {
+						hits++;
+						xVelocity = -xVelocity;
+						if (xVelocity < 0) { xVelocity += 1; }
+						else if (xVelocity > 0) { xVelocity -= 1; }
+						if (yVelocity < 0) { yVelocity += 1; }
+						else if (yVelocity > 0) { yVelocity -= 1; }
+						return true;
+					}
+				}
+			}
+		}
 		return false;
 	}
 	
