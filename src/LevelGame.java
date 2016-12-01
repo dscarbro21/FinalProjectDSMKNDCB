@@ -18,7 +18,7 @@ public class LevelGame extends JFrame {
 		currentLevel = 1;
 
 		setSize(900, 900);
-		setTitle("Angular Deflection of Spherical Masses fun time"); //Probably change this?
+		setTitle("Angular Deflection of Spherical Masses Fun Time"); //yeah
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 //		JPanel panel = new DisplayPanel();
