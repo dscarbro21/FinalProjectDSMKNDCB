@@ -1,7 +1,6 @@
+import java.awt.event.*;
 import java.util.ArrayList;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 
 public class LevelGame extends JFrame {
@@ -30,6 +29,37 @@ public class LevelGame extends JFrame {
 //		add(panel);
 //		panel = new AngleChooser();
 //		add(panel); 
+
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		menuBar.add(createFileMenu());
+	}
+
+	public JMenu createFileMenu(){
+		JMenu menu = new JMenu("File");
+		menu.add(createSelectLevelItem());
+		menu.add(createFileExitItem());
+		return menu;
+	}
+		
+	public JMenuItem createFileExitItem(){
+		JMenuItem item = new JMenuItem("Exit");
+		
+		class MenuItemListener implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent e){
+				System.exit(0);
+			} 
+		}
+		item.addActionListener(new MenuItemListener());
+		return item;
+	}
+
+	public JMenuItem createSelectLevelItem(){
+		JMenuItem i = new JMenuItem("Select Level");
+
+		// MAKE THIS DO THINGS
+		return i;
 	}
 
 	public void nextLevel(){
