@@ -1,4 +1,5 @@
+import javax.swing.JPanel;
 
-public class DisplayPanel {
+public class DisplayPanel extends JPanel {
 
 }

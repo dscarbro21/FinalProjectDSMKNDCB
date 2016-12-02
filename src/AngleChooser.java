@@ -1,4 +1,5 @@
+import javax.swing.JPanel;
 
-public class AngleChooser {
+public class AngleChooser extends JPanel {
 
 }

@@ -1,4 +1,5 @@
+import javax.swing.JPanel;
 
-public class ColorChooser {
+public class ColorChooser extends JPanel {
 
 }
