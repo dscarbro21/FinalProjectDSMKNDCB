@@ -4,12 +4,15 @@ import java.awt.event.*;
 
 public class DisplayPanel extends JPanel {
 	
-	boolean hasStart, funTime;
+	boolean hasStart, funTime, gameTime, info;
 	Color fun, otherFun, startBut, startButText, instBut, instButText;
+	Timer t;
 	
 	public DisplayPanel() {
 		hasStart = true;
 		funTime = true;
+		gameTime = false;
+		info = false;
 		fun = Color.YELLOW;
 		otherFun = Color.RED;
 		startBut = Color.BLUE;
@@ -19,10 +22,12 @@ public class DisplayPanel extends JPanel {
 		
 		Timer t = new Timer(1000, new TimerListener());
 		t.start();
+
 	}
 	
-	private class TimerListener implements ActionListener {
+	private class TimerListener implements ActionListener {				// "Fun Time" flashes colors
 		public void actionPerformed(ActionEvent e) {
+			System.out.println("woah");
 			if (funTime == true) {
 				fun = Color.RED;
 				otherFun = Color.YELLOW;
@@ -38,7 +43,7 @@ public class DisplayPanel extends JPanel {
 		}
 	}
 	
-	private class StartInstListener implements MouseMotionListener {
+	private class StartInstListener implements MouseMotionListener {				// If you hover over a button, it changes colors
 
 		public void mouseDragged(MouseEvent e) {
 		}
@@ -64,11 +69,34 @@ public class DisplayPanel extends JPanel {
 
 	}
 	
+	private class HomeButtonsListener implements MouseListener {				// If you click on a button in the home screen, you get directed to the correct area
+		public void mouseClicked(MouseEvent e) {
+			if (e.getX() > 299 && e.getX() < 601 && e.getY() > 549 && e.getY() < 651) {
+				hasStart = false;
+				gameTime = true;
+			}
+			else if (e.getX() > 299 && e.getX() < 601 && e.getY() > 674 && e.getY() < 776) {
+				hasStart = false;
+				info = true;
+			}			
+		}
+		public void mouseEntered(MouseEvent e) {			
+		}
+		public void mouseExited(MouseEvent e) {
+		}
+		public void mousePressed(MouseEvent e) {
+		}
+		public void mouseReleased(MouseEvent e) {
+		}
+		
+	}
+	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
 		if (hasStart == true) {										// Draws Home Screen
 			addMouseMotionListener(new StartInstListener());
+			addMouseListener(new HomeButtonsListener());
 			g.setColor(Color.WHITE);
 			g.setFont(new Font("Garamond", Font.BOLD, 60));
 			g.drawString("Angular Deflection of", 175, 200);
@@ -91,8 +119,8 @@ public class DisplayPanel extends JPanel {
 			g.drawString("START GAME", 353, 615);
 			g.setColor(instButText);
 			g.drawString("INSTRUCTIONS", 335, 742);
+		}
 
-		}		
 	}
 	
 }
