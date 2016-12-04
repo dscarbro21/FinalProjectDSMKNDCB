@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -6,6 +7,7 @@ import javax.swing.*;
 public class LevelGame extends JFrame {
 	private int currentLevel = 1;
 	ArrayList<Wall> walls = new ArrayList<Wall>();
+	private JPanel pane;
 
 	// variable used for singleton pattern
 	private static LevelGame theInstance = new LevelGame();
@@ -18,10 +20,14 @@ public class LevelGame extends JFrame {
 
 	private LevelGame() {
 		currentLevel = 1;
+		pane = new DisplayPanel();
 
 		setSize(900, 900);
 		setTitle("Angular Deflection of Spherical Masses Fun Time"); //yeah
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		pane.setBackground(Color.BLACK);
+		add(pane);
 
 //		JPanel panel = new DisplayPanel();
 //		add(panel);
@@ -33,16 +39,17 @@ public class LevelGame extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		menuBar.add(createFileMenu());
+		
 	}
-
-	public JMenu createFileMenu(){
+	
+	private JMenu createFileMenu(){
 		JMenu menu = new JMenu("File");
 		menu.add(createSelectLevelItem());
 		menu.add(createFileExitItem());
 		return menu;
 	}
 		
-	public JMenuItem createFileExitItem(){
+	private JMenuItem createFileExitItem(){
 		JMenuItem item = new JMenuItem("Exit");
 		
 		class MenuItemListener implements ActionListener{
@@ -55,7 +62,7 @@ public class LevelGame extends JFrame {
 		return item;
 	}
 
-	public JMenuItem createSelectLevelItem(){
+	private JMenuItem createSelectLevelItem(){
 		JMenuItem i = new JMenuItem("Select Level");
 
 		// MAKE THIS DO THINGS
