@@ -27,7 +27,6 @@ public class DisplayPanel extends JPanel {
 	
 	private class TimerListener implements ActionListener {				// "Fun Time" flashes colors
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("woah");
 			if (funTime == true) {
 				fun = Color.RED;
 				otherFun = Color.YELLOW;
@@ -119,6 +118,13 @@ public class DisplayPanel extends JPanel {
 			g.drawString("START GAME", 353, 615);
 			g.setColor(instButText);
 			g.drawString("INSTRUCTIONS", 335, 742);
+		}
+		
+		if(gameTime == true) {
+			JPanel gameScreen = new JPanel();
+			gameScreen.setSize(900, 600);
+			gameScreen.setBackground(Color.WHITE);
+			add(gameScreen);
 		}
 
 	}
