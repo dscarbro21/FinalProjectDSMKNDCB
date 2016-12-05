@@ -33,10 +33,7 @@ public class LevelGame extends JFrame {
 
 //		JPanel panel = new DisplayPanel();
 //		add(panel);
-//		panel = new ColorChooser();
-//		add(panel);
-//		panel = new AngleChooser();
-//		add(panel); 
+
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -45,6 +42,8 @@ public class LevelGame extends JFrame {
 		ball = new Ball(50, Color.BLACK);
 		launcher = new Launcher(0, 0);
 		ball.setStartPosition(new Point(300, 300));
+		
+		level1();
 		
 	}
 	
@@ -77,10 +76,49 @@ public class LevelGame extends JFrame {
 
 	public void nextLevel(){
 		currentLevel++;
+		levelChange();
 	}
 	
 	public void setLevel(int i){
 		currentLevel = i;
+		levelChange();
+	}
+	
+	public void levelChange()
+	{
+		switch(currentLevel)
+		{
+		case 1: 
+			level1();
+			break;
+		case 2: 
+			level2();
+			break;
+		case 3: 
+			level3();
+			break;
+		case 4:
+			level4();
+			break;
+		case 5:
+			level5();
+			break;
+		case 6:
+			level6();
+			break;
+		case 7:
+			level7();
+			break;
+		case 8:
+			level8();
+			break;
+		case 9:
+			level9();
+			break;
+		case 10:
+			level10();
+			break;
+		}
 	}
 	
 	public int getLevel() {
@@ -105,5 +143,55 @@ public class LevelGame extends JFrame {
 	public static void main(String [] args) {
 		LevelGame gui = new LevelGame();
 		gui.setVisible(true);
+	}
+	
+	public void level1()
+	{
+		addWall(new Wall( new Point(0,0), new Point (900, 300), 'H'));
+	}
+	
+	public void level2()
+	{
+		
+	}
+	
+	public void level3()
+	{
+		
+	}
+	
+	public void level4()
+	{
+		
+	}
+	
+	public void level5()
+	{
+		
+	}
+	
+	public void level6()
+	{
+		
+	}
+	
+	public void level7()
+	{
+		
+	}
+	
+	public void level8()
+	{
+		
+	}
+	
+	public void level9()
+	{
+		
+	}
+	
+	public void level10()
+	{
+		
 	}
 }

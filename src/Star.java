@@ -22,9 +22,5 @@ public class Star {
 	public Point getPosition() {
 		return position;
 	}
-	
-	
-	
-	
 
 }

@@ -100,7 +100,6 @@ public class Ball {
 	
 	public void launch(Launcher launcher)
 	{
-		
 		double temp = (launcher.getAngle() * (Math.PI / 180));
 		xVelocity = (int) (Math.cos(temp) * launcher.getPower());
 		yVelocity = -(int) (Math.sin(temp) * launcher.getPower()); //Negative sign is needed to account for coordinate system of JFrame starting in top left corner

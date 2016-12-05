@@ -334,12 +334,25 @@ public class DisplayPanel extends JPanel {
 			g.setColor(Color.MAGENTA);
 			g.fillOval(780, 740, 50, 50);
 			
+			
+			//paint ball
 			if(launched == true) {
 				theInstance.getBall().update();
 			}
 			
 			g.setColor(theInstance.getBall().getColor());
 			g.fillOval(theInstance.getBall().getXPosition(), theInstance.getBall().getYPosition(), theInstance.getBall().getSize(), theInstance.getBall().getSize());
+			
+			
+			//paint walls
+			g.setColor(Color.BLACK);
+			for(Wall w: theInstance.getWalls())
+			{
+				g.drawLine(w.getPoint1().x, w.getPoint1().y, w.getPoint2().x, w.getPoint2().y);
+			}
+			
+			
+			//draw the goal
 			
 			
 		}
