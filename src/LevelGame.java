@@ -88,6 +88,9 @@ public class LevelGame extends JFrame {
 	public void levelChange()
 	{
 		walls.clear();
+		
+		//congrats for advancing to next level splash screen
+		
 		switch(currentLevel)
 		{
 		case 1: 
@@ -120,6 +123,11 @@ public class LevelGame extends JFrame {
 		case 10:
 			level10();
 			break;
+		default:
+			//BEAT THE GAME CONGRATS SCREEN
+			//TELL THE PLAYER THE LEVEL WILL BE RESET TO 1
+			level1();
+			
 		}
 	}
 
