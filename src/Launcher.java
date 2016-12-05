@@ -11,6 +11,10 @@ public class Launcher {
 		this.power = power;
 	}
 	
+	public Point getPosition() {
+		return position;
+	}
+
 	public void setAngle(int angle)
 	{
 		this.angle = angle;

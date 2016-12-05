@@ -355,6 +355,10 @@ public class DisplayPanel extends JPanel {
 			g.setColor(theInstance.getStar().getColor());
 			g.fillRect(theInstance.getStar().getPosition().x, theInstance.getStar().getPosition().y, theInstance.getStar().getWinRadius(),theInstance.getStar().getWinRadius());
 			
+			//draw the launcher
+			g.setColor(Color.BLACK);
+			g.fillRect(theInstance.getLauncher().getPosition().x, theInstance.getLauncher().getPosition().y, 75, 100);
+			
 		}
 
 	}
