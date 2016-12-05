@@ -338,7 +338,7 @@ public class DisplayPanel extends JPanel {
 			//paint ball
 			if(launched == true) {
 				theInstance.getBall().update();
-				//theInstance.getBall().checkCollision();
+				theInstance.getBall().checkCollision(theInstance.getWalls());
 			}
 			
 			g.setColor(theInstance.getBall().getColor());

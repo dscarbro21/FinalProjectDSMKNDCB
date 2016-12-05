@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Ball {
 
@@ -31,8 +32,10 @@ public class Ball {
 		position = p;
 	}
 	
-	public boolean checkCollision() {		// EDIT LATER
-		for (Wall w : level.getWalls()) {
+	public boolean checkCollision(ArrayList<Wall> walls) {		// EDIT LATER
+		
+		
+		for (Wall w : walls) {
 			if (w.getOrientation() == 'H') {
 				if (w.getPoint1().getY() >= position.getY() && w.getPoint1().getY() <= position.getY() + radius*2) {
 					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
@@ -60,6 +63,7 @@ public class Ball {
 				}
 			}
 		}
+		
 		return false;
 	}
 	
@@ -82,7 +86,7 @@ public class Ball {
 	
 	public void update() {
 		position.setLocation(position.getX()+(xVelocity), position.getY()+(yVelocity));
-		//checkCollision();
+		//b = checkCollision();
 		didWin();
 	}
 	

@@ -19,10 +19,10 @@ public class Tests {
 		wall.setPosition(new Point(10,10), new Point(100,10));
 		ball.setRadius(20);
 		ball.setPosition(new Point(60,60));
-		assertFalse(ball.checkCollision());
+		assertFalse(ball.checkCollision(game.getWalls()));
 		
 		ball.setPosition(new Point(30, 10));
-		assertTrue(ball.checkCollision());
+		assertTrue(ball.checkCollision(game.getWalls()));
 		assertTrue(ball.getHits() == 1);
 		
 		ball.setPosition(new Point(10,40));
@@ -31,7 +31,7 @@ public class Tests {
 			ball.update();
 			t++;
 			if (t == 3) {
-				assertTrue(ball.checkCollision());
+				assertTrue(ball.checkCollision(game.getWalls()));
 			}
 			else if (t > 3) {
 				assertTrue(ball.getYVelocity() > 0);

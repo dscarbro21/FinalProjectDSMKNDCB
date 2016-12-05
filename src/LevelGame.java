@@ -45,7 +45,6 @@ public class LevelGame extends JFrame {
 		launcher = new Launcher(0, 0);
 		
 		level1();
-
 	}
 
 	private JMenu createFileMenu(){
