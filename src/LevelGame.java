@@ -77,6 +77,7 @@ public class LevelGame extends JFrame {
 	public void nextLevel(){
 		currentLevel++;
 		levelChange();
+		ball.reset();
 	}
 
 	public void setLevel(int i){

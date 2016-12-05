@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
+
 public class Ball {
 
 	private Color color;
@@ -41,10 +44,12 @@ public class Ball {
 					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
 						hits++;
 						yVelocity = -yVelocity;
+						/*
 						if (xVelocity < 0) { xVelocity += 1; }
 						else if (xVelocity > 0) { xVelocity -= 1; }
 						if (yVelocity < 0) { yVelocity += 1; }
 						else if (yVelocity > 0) { yVelocity -= 1; }
+						*/
 						return true;
 					}
 				}
@@ -54,10 +59,12 @@ public class Ball {
 					if (position.getY() + radius*2 >= w.getPoint1().getY() && position.getY() <= w.getPoint2().getY()) {
 						hits++;
 						xVelocity = -xVelocity;
+						/*
 						if (xVelocity < 0) { xVelocity += 1; }
 						else if (xVelocity > 0) { xVelocity -= 1; }
 						if (yVelocity < 0) { yVelocity += 1; }
 						else if (yVelocity > 0) { yVelocity -= 1; }
+						*/
 						return true;
 					}
 				}
@@ -95,10 +102,14 @@ public class Ball {
 	}
 	
 	public boolean didWin() {
-		
-		if(position.equals(Star.position))
+		Star star = LevelGame.getInstance().getStar();
+		if(position.getX()+radius*2 >= star.getPosition().getX()
+			&& position.getX() <= star.getPosition().getX()+star.getWinRadius()*2
+			&& position.getY()+radius*2 >= star.getPosition().getY()
+			&& position.getY() <= star.getPosition().getY()+star.getWinRadius()*2)
 		{
 			LevelGame.getInstance().nextLevel();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level " + (LevelGame.getInstance().getLevel() - 1) + "!", "", JOptionPane.INFORMATION_MESSAGE);
 			return true;
 		}
 		
