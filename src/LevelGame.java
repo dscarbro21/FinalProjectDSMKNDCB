@@ -161,9 +161,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 		
 		//goal
 		star.setPosition(new Point(750,300));
@@ -178,9 +178,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -197,9 +197,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -216,9 +216,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -236,9 +236,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -256,9 +256,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -276,9 +276,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -296,9 +296,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -315,9 +315,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
@@ -334,9 +334,9 @@ public class LevelGame extends JFrame {
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
-		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'V'));
 
 		//interior walls
 
