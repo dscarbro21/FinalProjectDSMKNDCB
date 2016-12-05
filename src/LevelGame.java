@@ -8,6 +8,7 @@ public class LevelGame extends JFrame {
 	private int currentLevel = 1;
 	ArrayList<Wall> walls = new ArrayList<Wall>();
 	Ball ball;
+	Star star;
 	Launcher launcher;
 	private JPanel pane;
 
@@ -40,9 +41,9 @@ public class LevelGame extends JFrame {
 		menuBar.add(createFileMenu());
 
 		ball = new Ball(50, Color.BLACK);
+		star = new Star(50, Color.YELLOW);
 		launcher = new Launcher(0, 0);
-		ball.setStartPosition(new Point(300, 300));
-
+		
 		level1();
 
 	}
@@ -136,6 +137,10 @@ public class LevelGame extends JFrame {
 	public Ball getBall() {
 		return ball;
 	}
+	
+	public Star getStar() {
+		return star;
+	}
 
 	public Launcher getLauncher() {
 		return launcher;
@@ -150,15 +155,27 @@ public class LevelGame extends JFrame {
 	
 	public void level1()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
 		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
 		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+		
+		//goal
+		star.setPosition(new Point(750,300));
+				
 	}
 
 	public void level2()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -174,6 +191,10 @@ public class LevelGame extends JFrame {
 
 	public void level3()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -189,6 +210,10 @@ public class LevelGame extends JFrame {
 
 	public void level4()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -205,6 +230,10 @@ public class LevelGame extends JFrame {
 
 	public void level5()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -221,6 +250,10 @@ public class LevelGame extends JFrame {
 
 	public void level6()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -237,6 +270,10 @@ public class LevelGame extends JFrame {
 
 	public void level7()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -253,6 +290,10 @@ public class LevelGame extends JFrame {
 
 	public void level8()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -268,6 +309,10 @@ public class LevelGame extends JFrame {
 
 	public void level9()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
@@ -283,6 +328,10 @@ public class LevelGame extends JFrame {
 
 	public void level10()
 	{
+		//launcher and ball start position
+		launcher.setPosition(new Point(300,300));
+		ball.setStartPosition(new Point(300, 300));
+		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
 		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));

@@ -11,6 +11,14 @@ public class Star {
 		winRadius = r;
 	}
 	
+	public Color getColor() {
+		return color;
+	}
+
+	public int getWinRadius() {
+		return winRadius;
+	}
+
 	public void setPosition(Point p) {
 		position = p;
 	}

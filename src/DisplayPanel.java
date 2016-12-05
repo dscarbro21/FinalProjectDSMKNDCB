@@ -351,9 +351,9 @@ public class DisplayPanel extends JPanel {
 				g.drawLine(w.getPoint1().x, w.getPoint1().y, w.getPoint2().x, w.getPoint2().y);
 			}
 			
-			
 			//draw the goal
-			
+			g.setColor(theInstance.getStar().getColor());
+			g.fillRect(theInstance.getStar().getPosition().x, theInstance.getStar().getPosition().y, theInstance.getStar().getWinRadius(),theInstance.getStar().getWinRadius());
 			
 		}
 
