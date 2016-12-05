@@ -82,7 +82,8 @@ public class Ball {
 	
 	public void update() {
 		position.setLocation(position.getX()+(xVelocity), position.getY()+(yVelocity));
-		b = checkCollision();
+		//checkCollision();
+		didWin();
 	}
 	
 	public int getCollisionAngle() {		// EDIT LATER
