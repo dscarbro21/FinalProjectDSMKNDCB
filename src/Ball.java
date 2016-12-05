@@ -80,7 +80,7 @@ public class Ball {
 	}
 	
 	public void update() {
-		position.setLocation(position.getX()+xVelocity, position.getY()+yVelocity);
+		position.setLocation(position.getX()+(xVelocity), position.getY()+(yVelocity));
 	}
 	
 	public int getCollisionAngle() {		// EDIT LATER
@@ -106,6 +106,7 @@ public class Ball {
 		yVelocity = -(int) (Math.sin(temp) * launcher.getPower()); //Negative sign is needed to account for coordinate system of JFrame starting in top left corner
 		
 	}
+	
 
 	public int getXPosition() {
 		return (int) position.getX();
@@ -116,7 +117,9 @@ public class Ball {
 	}
 
 	public void reset() {
-		position = initPosition;
+		position = new Point(initPosition);
+		xVelocity = 0;
+		yVelocity = 0;
 		hits = 0;
 		
 	}
@@ -124,6 +127,18 @@ public class Ball {
 	public void setStartPosition(Point point) {
 		position = point;
 		initPosition = new Point(point);
+	}
+	
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+	
+	public int getSize() {
+		return 2 * radius;
 	}
 
 	

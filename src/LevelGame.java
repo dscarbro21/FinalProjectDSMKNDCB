@@ -7,6 +7,8 @@ import javax.swing.*;
 public class LevelGame extends JFrame {
 	private int currentLevel = 1;
 	ArrayList<Wall> walls = new ArrayList<Wall>();
+	Ball ball;
+	Launcher launcher;
 	private JPanel pane;
 
 	// variable used for singleton pattern
@@ -39,6 +41,10 @@ public class LevelGame extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		menuBar.add(createFileMenu());
+		
+		ball = new Ball(50, Color.BLACK);
+		launcher = new Launcher(0, 0);
+		ball.setStartPosition(new Point(300, 300));
 		
 	}
 	
@@ -86,6 +92,14 @@ public class LevelGame extends JFrame {
 	}
 	public void addWall(Wall w) {
 		walls.add(w);
+	}
+	
+	public Ball getBall() {
+		return ball;
+	}
+	
+	public Launcher getLauncher() {
+		return launcher;
 	}
 
 	public static void main(String [] args) {
