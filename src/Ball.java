@@ -9,6 +9,7 @@ public class Ball {
 	private Point position;
 	private Point initPosition;
 	private int hits;
+	private boolean b;
 	
 	public final int LIFE = 80;
 	
@@ -81,6 +82,7 @@ public class Ball {
 	
 	public void update() {
 		position.setLocation(position.getX()+(xVelocity), position.getY()+(yVelocity));
+		//b = checkCollision();
 	}
 	
 	public int getCollisionAngle() {		// EDIT LATER
