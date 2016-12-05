@@ -342,7 +342,7 @@ public class DisplayPanel extends JPanel {
 			
 			g.setColor(theInstance.getBall().getColor());
 			g.fillOval(theInstance.getBall().getXPosition(), theInstance.getBall().getYPosition(), theInstance.getBall().getSize(), theInstance.getBall().getSize());
-			
+		
 			
 			//paint walls
 			g.setColor(Color.BLACK);

@@ -13,9 +13,9 @@ public class LevelGame extends JFrame {
 
 	// variable used for singleton pattern
 	private static LevelGame theInstance = new LevelGame();
-	
-	
-	
+
+
+
 	public static LevelGame getInstance() {
 		return theInstance;
 	}
@@ -27,36 +27,36 @@ public class LevelGame extends JFrame {
 		setSize(900, 900);
 		setTitle("Angular Deflection of Spherical Masses Fun Time"); //yeah
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		pane.setBackground(Color.BLACK);
 		add(pane);
 
-//		JPanel panel = new DisplayPanel();
-//		add(panel);
+		//		JPanel panel = new DisplayPanel();
+		//		add(panel);
 
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		menuBar.add(createFileMenu());
-		
+
 		ball = new Ball(50, Color.BLACK);
 		launcher = new Launcher(0, 0);
 		ball.setStartPosition(new Point(300, 300));
-		
+
 		level1();
-		
+
 	}
-	
+
 	private JMenu createFileMenu(){
 		JMenu menu = new JMenu("File");
 		menu.add(createSelectLevelItem());
 		menu.add(createFileExitItem());
 		return menu;
 	}
-		
+
 	private JMenuItem createFileExitItem(){
 		JMenuItem item = new JMenuItem("Exit");
-		
+
 		class MenuItemListener implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -78,14 +78,15 @@ public class LevelGame extends JFrame {
 		currentLevel++;
 		levelChange();
 	}
-	
+
 	public void setLevel(int i){
 		currentLevel = i;
 		levelChange();
 	}
-	
+
 	public void levelChange()
 	{
+		walls.clear();
 		switch(currentLevel)
 		{
 		case 1: 
@@ -120,22 +121,22 @@ public class LevelGame extends JFrame {
 			break;
 		}
 	}
-	
+
 	public int getLevel() {
 		return currentLevel;
 	}
-	
+
 	public ArrayList<Wall> getWalls() {
 		return walls;
 	}
 	public void addWall(Wall w) {
 		walls.add(w);
 	}
-	
+
 	public Ball getBall() {
 		return ball;
 	}
-	
+
 	public Launcher getLauncher() {
 		return launcher;
 	}
@@ -144,54 +145,154 @@ public class LevelGame extends JFrame {
 		LevelGame gui = new LevelGame();
 		gui.setVisible(true);
 	}
+
+	
 	
 	public void level1()
 	{
-		addWall(new Wall( new Point(0,0), new Point (900, 300), 'H'));
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
 	}
-	
+
 	public void level2()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
 	}
-	
+
 	public void level3()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
 	}
-	
+
 	public void level4()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
+
 	}
-	
+
 	public void level5()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
+
 	}
-	
+
 	public void level6()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
+
 	}
-	
+
 	public void level7()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
+
 	}
-	
+
 	public void level8()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
 	}
-	
+
 	public void level9()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
 	}
-	
+
 	public void level10()
 	{
-		
+		//bounding walls
+		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
+		addWall(new Wall( new Point(50,25), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (50, 550), 'H'));
+		addWall(new Wall( new Point(850,550), new Point (850, 25), 'H'));
+
+		//interior walls
+
+		//goal
+
+		//ball size
 	}
 }
