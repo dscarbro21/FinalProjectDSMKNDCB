@@ -105,7 +105,7 @@ public class Ball {
 	}
 	
 	public int getCollisionAngle() {		// EDIT LATER
-		return 180 - (int)((180.0/Math.PI)*(2*Math.atan(((double)yVelocity/(double)xVelocity))));
+		return 180 - (int)((180.0/Math.PI)*(2*Math.atan(Math.abs(((double)yVelocity/(double)xVelocity)))));
 	}
 	
 	public boolean didWin() {
