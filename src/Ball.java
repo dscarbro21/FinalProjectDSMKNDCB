@@ -48,11 +48,9 @@ public class Ball {
 	
 						if (yVelocity < 0) {
 							position.setLocation(position.x, w.getPoint1().getY()-radius*2);
-							yVelocity += 1;
 						}
 						else if (yVelocity > 0) {
 							position.setLocation(position.x, w.getPoint1().getY());
-							yVelocity -= 1;
 						}
 						
 						b = true;
@@ -69,14 +67,10 @@ public class Ball {
 						
 						if (xVelocity < 0) {
 							position.setLocation(w.getPoint1().getX()-radius*2, position.y);
-							xVelocity += 1;
 						}
 						else if (xVelocity > 0) {
 							position.setLocation(w.getPoint1().getX(), position.y);
-							xVelocity -= 1;
 						}
-						if (yVelocity < 0) { yVelocity += 1; }
-						else if (yVelocity > 0) { yVelocity -= 1; }
 						
 						
 						b = true;
