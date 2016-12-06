@@ -14,7 +14,6 @@ public class Ball {
 	private Point initPosition;
 	private int hits;
 	private boolean b;
-	private String lastWallHit = "";
 	
 	public final int LIFE = 80;
 	
@@ -37,12 +36,13 @@ public class Ball {
 	}
 	
 	public boolean checkCollision(ArrayList<Wall> walls) {		// EDIT LATER
-		
+		boolean b = false;
 		
 		for (Wall w : walls) {
 			if (w.getOrientation() == 'H') {
 				if (w.getPoint1().getY() >= position.getY() && w.getPoint1().getY() <= position.getY() + radius*2) {
 					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
+<<<<<<< HEAD
 						/*String thisWall = "";
 						if (yVelocity > 0) { thisWall = "DOWN"; }
 						else if (yVelocity < 0) { thisWall = "UP"; }
@@ -51,21 +51,36 @@ public class Ball {
 						{ return false; }
 						
 						lastWallHit = thisWall;*/
+=======
+						
+>>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						hits++;
 						yVelocity = -yVelocity;
 						
 						/*if (xVelocity < 0) { xVelocity += 1; }
 						else if (xVelocity > 0) { xVelocity -= 1; }
+<<<<<<< HEAD
 						if (yVelocity < 0) { yVelocity += 1; }
 						else if (yVelocity > 0) { yVelocity -= 1; }*/
+=======
+						if (yVelocity < 0) {
+							position.setLocation(position.x, w.getPoint1().getY()-radius*2);
+							yVelocity += 1;
+						}
+						else if (yVelocity > 0) {
+							position.setLocation(position.x, w.getPoint1().getY());
+							yVelocity -= 1;
+						}
+>>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						
-						return true;
+						b = true;
 					}
 				}
 			}
 			else if (w.getOrientation() == 'V') {
 				if (w.getPoint1().getX() >= position.getX() && w.getPoint1().getX() <= position.getX() + radius*2) {
 					if (position.getY() + radius*2 >= w.getPoint1().getY() && position.getY() <= w.getPoint2().getY()) {
+<<<<<<< HEAD
 						/*String thisWall = "";
 						if (xVelocity > 0) { thisWall = "RIGHT"; }
 						else if (xVelocity < 0) { thisWall = "LEFT"; }
@@ -79,16 +94,31 @@ public class Ball {
 						/*
 						if (xVelocity < 0) { xVelocity += 1; }
 						else if (xVelocity > 0) { xVelocity -= 1; }
+=======
+						
+						hits++;
+						xVelocity = -xVelocity;
+						
+						if (xVelocity < 0) {
+							position.setLocation(w.getPoint1().getX()-radius*2, position.y);
+							xVelocity += 1;
+						}
+						else if (xVelocity > 0) {
+							position.setLocation(w.getPoint1().getX(), position.y);
+							xVelocity -= 1;
+						}
+>>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						if (yVelocity < 0) { yVelocity += 1; }
 						else if (yVelocity > 0) { yVelocity -= 1; }*/
 						
-						return true;
+						
+						b = true;
 					}
 				}
 			}
 		}
 		
-		return false;
+		return b;
 	}
 	
 	public int getHits() {
@@ -110,7 +140,6 @@ public class Ball {
 	
 	public void update() {
 		position.setLocation(position.getX()+(xVelocity), position.getY()+(yVelocity));
-		//b = checkCollision();
 		didWin();
 	}
 	
@@ -155,7 +184,6 @@ public class Ball {
 		xVelocity = 0;
 		yVelocity = 0;
 		hits = 0;
-		
 	}
 
 	public void setStartPosition(Point point) {
