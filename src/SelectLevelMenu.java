@@ -7,6 +7,7 @@ import javax.swing.*;
 public class SelectLevelMenu extends JDialog{
 	private JComboBox<String> levels;
 	LevelGame game;
+	private int k = 1;
 	private boolean isValid;
 
 	public SelectLevelMenu() {
@@ -23,6 +24,8 @@ public class SelectLevelMenu extends JDialog{
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (isValid == true) {
+					game.setLevel(k);
+		    		game.selectLevel(k);
 					setVisible(false);
 				}
 				else {
@@ -43,13 +46,11 @@ public class SelectLevelMenu extends JDialog{
 		
 		j.addActionListener (new ActionListener () {
 		    public void actionPerformed(ActionEvent e) {
-		    	int k = Integer.parseInt(j.getSelectedItem().toString());
+		    	k = Integer.parseInt(j.getSelectedItem().toString());
 		    	if (k > game.getHighestLevel()) {
 		    		isValid = false;
 		    	}
 		    	else {
-		    		game.setLevel(k);
-		    		game.selectLevel(k);
 		    		isValid = true;
 		    	}
 		    }
