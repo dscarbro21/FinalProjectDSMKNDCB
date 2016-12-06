@@ -42,27 +42,10 @@ public class Ball {
 			if (w.getOrientation() == 'H') {
 				if (w.getPoint1().getY() >= position.getY() && w.getPoint1().getY() <= position.getY() + radius*2) {
 					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
-<<<<<<< HEAD
-						/*String thisWall = "";
-						if (yVelocity > 0) { thisWall = "DOWN"; }
-						else if (yVelocity < 0) { thisWall = "UP"; }
-						
-						if (thisWall.equals(lastWallHit))
-						{ return false; }
-						
-						lastWallHit = thisWall;*/
-=======
-						
->>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						hits++;
 						yVelocity = -yVelocity;
 						
-						/*if (xVelocity < 0) { xVelocity += 1; }
-						else if (xVelocity > 0) { xVelocity -= 1; }
-<<<<<<< HEAD
-						if (yVelocity < 0) { yVelocity += 1; }
-						else if (yVelocity > 0) { yVelocity -= 1; }*/
-=======
+	
 						if (yVelocity < 0) {
 							position.setLocation(position.x, w.getPoint1().getY()-radius*2);
 							yVelocity += 1;
@@ -71,7 +54,6 @@ public class Ball {
 							position.setLocation(position.x, w.getPoint1().getY());
 							yVelocity -= 1;
 						}
->>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						
 						b = true;
 					}
@@ -80,22 +62,8 @@ public class Ball {
 			else if (w.getOrientation() == 'V') {
 				if (w.getPoint1().getX() >= position.getX() && w.getPoint1().getX() <= position.getX() + radius*2) {
 					if (position.getY() + radius*2 >= w.getPoint1().getY() && position.getY() <= w.getPoint2().getY()) {
-<<<<<<< HEAD
-						/*String thisWall = "";
-						if (xVelocity > 0) { thisWall = "RIGHT"; }
-						else if (xVelocity < 0) { thisWall = "LEFT"; }
-						
-						if (thisWall.equals(lastWallHit)) { return false; }
-						
-						lastWallHit = thisWall;*/
-						hits++;
-						xVelocity = -xVelocity;
-						
-						/*
-						if (xVelocity < 0) { xVelocity += 1; }
-						else if (xVelocity > 0) { xVelocity -= 1; }
-=======
-						
+
+					
 						hits++;
 						xVelocity = -xVelocity;
 						
@@ -107,9 +75,8 @@ public class Ball {
 							position.setLocation(w.getPoint1().getX(), position.y);
 							xVelocity -= 1;
 						}
->>>>>>> e75dc06c06c389ad5c70334c9448b1e3a696262a
 						if (yVelocity < 0) { yVelocity += 1; }
-						else if (yVelocity > 0) { yVelocity -= 1; }*/
+						else if (yVelocity > 0) { yVelocity -= 1; }
 						
 						
 						b = true;
