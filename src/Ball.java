@@ -116,7 +116,6 @@ public class Ball {
 			&& position.getY() <= star.getPosition().getY()+star.getWinRadius())
 		{
 			LevelGame.getInstance().nextLevel();
-			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level " + (LevelGame.getInstance().getLevel() - 1) + "!", "", JOptionPane.INFORMATION_MESSAGE);
 			return true;
 		}
 		

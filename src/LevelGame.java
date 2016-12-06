@@ -5,7 +5,7 @@ import javax.swing.*;
 
 
 public class LevelGame extends JFrame {
-	public static final int MAX_LEVELS = 10;
+	public static final int MAX_LEVELS = 6;
 	private int highestLevel = 1;
 	private int currentLevel = 1;
 	ArrayList<Wall> walls = new ArrayList<Wall>();
@@ -86,9 +86,14 @@ JMenuItem i = new JMenuItem("Select Level");
 	}
 
 	public void nextLevel(){
-		currentLevel++;
-		levelChange();
+		if (currentLevel >= MAX_LEVELS) {
+			currentLevel = 1;
+		}
+		else {
+			currentLevel++;
+		}
 		ball.reset();
+		levelChange();
 		if (highestLevel < currentLevel) {
 			highestLevel = currentLevel;
 		}
@@ -103,45 +108,32 @@ JMenuItem i = new JMenuItem("Select Level");
 	{
 		walls.clear();
 
-		//congrats for advancing to next level splash screen
-
 		switch(currentLevel)
 		{
 		case 1: 
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat the game!  You will be sent back to level 1.", "", JOptionPane.INFORMATION_MESSAGE);
 			level1();
 			break;
 		case 2: 
 			level2();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level 1!", "", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		case 3: 
 			level3();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level 2!", "", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		case 4:
 			level4();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level 3!", "", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		case 5:
 			level5();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level 4!", "", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		case 6:
 			level6();
+			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level 5!", "", JOptionPane.INFORMATION_MESSAGE);
 			break;
-		case 7:
-			level7();
-			break;
-		case 8:
-			level8();
-			break;
-		case 9:
-			level9();
-			break;
-		case 10:
-			level10();
-			break;
-		default:
-			//BEAT THE GAME CONGRATS SCREEN
-			//TELL THE PLAYER THE LEVEL WILL BE RESET TO 1
-			level1();
-
 		}
 	}
 
@@ -180,6 +172,7 @@ JMenuItem i = new JMenuItem("Select Level");
 		//launcher and ball start position
 		launcher.setPosition(new Point(300,300));
 		ball.setStartPosition(new Point(300, 300));
+		ball.reset();
 
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
@@ -189,6 +182,7 @@ JMenuItem i = new JMenuItem("Select Level");
 
 		//goal
 		star.setPosition(new Point(750,300));
+		star.setRadius(50);
 
 	}
 
@@ -312,7 +306,7 @@ JMenuItem i = new JMenuItem("Select Level");
 		addWall(new Wall( new Point(150,275), new Point (675,275), 'H'));
 		addWall(new Wall( new Point(225,400), new Point (675,400), 'H'));
 		addWall(new Wall( new Point(675,275), new Point (675,400), 'V'));
-
+		
 		//goal
 		star.setPosition(new Point(450, 335));
 		star.setRadius(25);
@@ -322,86 +316,6 @@ JMenuItem i = new JMenuItem("Select Level");
 
 	}
 
-	public void level7()
-	{
-		//launcher and ball start position
-		launcher.setPosition(new Point(100,50));
-		ball.setStartPosition(new Point(100, 50));
-		ball.reset();
-
-		//bounding walls
-		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
-		addWall(new Wall( new Point(50,550), new Point (850, 550), 'H'));
-		addWall(new Wall( new Point(850,25), new Point (850, 550), 'V'));
-
-		//interior walls
-
-		//goal
-
-		//ball size
-
-	}
-
-	public void level8()
-	{
-		//launcher and ball start position
-		launcher.setPosition(new Point(100,50));
-		ball.setStartPosition(new Point(100, 50));
-		ball.reset();
-
-		//bounding walls
-		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
-		addWall(new Wall( new Point(50,550), new Point (850, 550), 'H'));
-		addWall(new Wall( new Point(850,25), new Point (850, 550), 'V'));
-
-		//interior walls
-
-		//goal
-
-		//ball size
-	}
-
-	public void level9()
-	{
-		//launcher and ball start position
-		launcher.setPosition(new Point(100,50));
-		ball.setStartPosition(new Point(100, 50));
-		ball.reset();
-
-		//bounding walls
-		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
-		addWall(new Wall( new Point(50,550), new Point (850, 550), 'H'));
-		addWall(new Wall( new Point(850,25), new Point (850, 550), 'V'));
-
-		//interior walls
-
-		//goal
-
-		//ball size
-	}
-
-	public void level10()
-	{
-		//launcher and ball start position
-		launcher.setPosition(new Point(100,50));
-		ball.setStartPosition(new Point(100, 50));
-		ball.reset();
-
-		//bounding walls
-		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
-		addWall(new Wall( new Point(50,25), new Point (50, 550), 'V'));
-		addWall(new Wall( new Point(50,550), new Point (850, 550), 'H'));
-		addWall(new Wall( new Point(850,25), new Point (850, 550), 'V'));
-
-		//interior walls
-
-		//goal
-
-		//ball size
-	}
 	
 	public int getHighestLevel() {
 		return highestLevel;
