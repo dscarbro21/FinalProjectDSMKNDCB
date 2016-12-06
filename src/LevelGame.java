@@ -5,12 +5,15 @@ import javax.swing.*;
 
 
 public class LevelGame extends JFrame {
+	public static final int MAX_LEVELS = 10;
+	private int highestLevel = 1;
 	private int currentLevel = 1;
 	ArrayList<Wall> walls = new ArrayList<Wall>();
 	Ball ball;
 	Star star;
 	Launcher launcher;
 	private JPanel pane;
+	SelectLevelMenu select;
 
 	// variable used for singleton pattern
 	private static LevelGame theInstance = new LevelGame();
@@ -45,6 +48,8 @@ public class LevelGame extends JFrame {
 		launcher = new Launcher(0, 0);
 
 		level1();
+		
+		select = new SelectLevelMenu();
 	}
 
 	private JMenu createFileMenu(){
@@ -68,9 +73,15 @@ public class LevelGame extends JFrame {
 	}
 
 	private JMenuItem createSelectLevelItem(){
-		JMenuItem i = new JMenuItem("Select Level");
-
-		// MAKE THIS DO THINGS
+JMenuItem i = new JMenuItem("Select Level");
+		
+		class MenuItemListener implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent e){
+				select.setVisible(true);
+			} 
+		}
+		i.addActionListener(new MenuItemListener());
 		return i;
 	}
 
@@ -78,6 +89,9 @@ public class LevelGame extends JFrame {
 		currentLevel++;
 		levelChange();
 		ball.reset();
+		if (highestLevel < currentLevel) {
+			highestLevel = currentLevel;
+		}
 	}
 
 	public void setLevel(int i){
@@ -387,5 +401,9 @@ public class LevelGame extends JFrame {
 		//goal
 
 		//ball size
+	}
+	
+	public int getHighestLevel() {
+		return highestLevel;
 	}
 }
