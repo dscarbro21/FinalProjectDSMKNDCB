@@ -125,7 +125,7 @@ public class DisplayPanel extends JPanel {
 				addMouseListener(resetButton);
 				
 				t.stop();
-				t = new Timer(1, new TimerListener());
+				t = new Timer(10, new TimerListener());
 				t.start();
 			}
 			else if (e.getX() > 299 && e.getX() < 601 && e.getY() > 674 && e.getY() < 776) {
@@ -165,7 +165,7 @@ public class DisplayPanel extends JPanel {
 	private class PowerListener implements MouseListener {				// Select the power
 		public void mouseClicked(MouseEvent e) {
 			if (e.getX() >= 60 && e.getX() <= 360 && e.getY() >= 770 && e.getY() <= 810) {
-				theInstance.getLauncher().setPower((int)(((double)e.getX() - 60.0)/300.0 * 10.0));
+				theInstance.getLauncher().setPower((int)(((double)e.getX() - 60.0)/300.0 * 50.0));
 				//System.out.println((int)(((double)e.getX() - 60.0)/300.0 * 10.0));
 				
 			}			
@@ -320,7 +320,7 @@ public class DisplayPanel extends JPanel {
 			g.setColor(Color.BLUE);
 			g.fillRect(60, 770, 300, 40);
 			g.setColor(Color.GREEN);
-			g.fillRect(60, 770, (int)(theInstance.getLauncher().getPower()/10.0 * 300), 40);
+			g.fillRect(60, 770, (int)(theInstance.getLauncher().getPower()/50.0 * 300), 40);
 			
 			g.setColor(Color.BLUE);
 			//Launch button
