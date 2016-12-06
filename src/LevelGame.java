@@ -181,8 +181,9 @@ public class LevelGame extends JFrame {
 	public void level2()
 	{
 		//launcher and ball start position
-		launcher.setPosition(new Point(300,300));
-		ball.setStartPosition(new Point(300, 300));
+		launcher.setPosition(new Point(100,50));
+		ball.setStartPosition(new Point(100, 50));
+		ball.reset();
 		
 		//bounding walls
 		addWall(new Wall( new Point(50,25), new Point (850,25), 'H'));
@@ -191,10 +192,13 @@ public class LevelGame extends JFrame {
 		addWall(new Wall( new Point(850,25), new Point (850, 550), 'V'));
 
 		//interior walls
+		addWall(new Wall( new Point(50,250), new Point (600, 250), 'H'));
 
 		//goal
+		star.setPosition(new Point(100, 400));
 
 		//ball size
+		ball.setRadius(25);
 	}
 
 	public void level3()
