@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class DisplayPanel extends JPanel {
 	
@@ -11,6 +12,7 @@ public class DisplayPanel extends JPanel {
 	Color fun, otherFun, startBut, startButText, instBut, instButText;
 	Timer t;
 	LevelGame theInstance = LevelGame.getInstance();
+	ArrayList<CollisionAngle> angles = new ArrayList<CollisionAngle>();
 	
 	//bg
 	Image image;
@@ -350,13 +352,17 @@ public class DisplayPanel extends JPanel {
 			//paint ball
 			if(launched == true) {
 				theInstance.getBall().update();
-				theInstance.getBall().checkCollision(theInstance.getWalls());
+				if (theInstance.getBall().checkCollision(theInstance.getWalls())) {
+					angles.add(new CollisionAngle(theInstance.getBall().getCollisionAngle(), theInstance.getBall().getXPosition(), theInstance.getBall().getYPosition()));
+				}
 			}
-			
 			g.setColor(theInstance.getBall().getColor());
 			g.fillOval(theInstance.getBall().getXPosition(), theInstance.getBall().getYPosition(), theInstance.getBall().getSize(), theInstance.getBall().getSize());
 		
-			
+			//paint collision angles
+			for (CollisionAngle a : angles) {
+				a.display(g);
+			}
 			//paint walls
 			g.setColor(Color.BLACK);
 			for(Wall w: theInstance.getWalls())
