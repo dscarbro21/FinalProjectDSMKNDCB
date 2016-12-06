@@ -358,7 +358,7 @@ public class DisplayPanel extends JPanel {
 		
 			
 			//paint walls
-			g.setColor(Color.WHITE);
+			g.setColor(Color.BLACK);
 			for(Wall w: theInstance.getWalls())
 			{
 				g.drawLine(w.getPoint1().x, w.getPoint1().y, w.getPoint2().x, w.getPoint2().y);
