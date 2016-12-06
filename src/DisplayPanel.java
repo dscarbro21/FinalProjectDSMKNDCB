@@ -1,6 +1,9 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.net.URL;
 
 public class DisplayPanel extends JPanel {
 	
@@ -8,6 +11,9 @@ public class DisplayPanel extends JPanel {
 	Color fun, otherFun, startBut, startButText, instBut, instButText;
 	Timer t;
 	LevelGame theInstance = LevelGame.getInstance();
+	
+	//bg
+	Image image;
 	
 	//Listeners
 	StartInstListener starter;
@@ -285,9 +291,15 @@ public class DisplayPanel extends JPanel {
 			
 			
 			//Draw main screen
-			g.setColor(Color.WHITE);
-			g.fillRect(0, 0, 900, 600);
+			URL url = getClass().getResource("/images/bg.png");
+			try {
+				image = ImageIO.read(url);
+				g.drawImage(image, 0, 0, 900, 600, null);
+			} catch (IOException e1) {
+				System.out.println("File is not a valid image " + "/images/bg.png");
+			}
 			//Draw bottom menus
+			g.setColor(Color.WHITE);
 			g.fillRect(5, 605, 440, 280);
 			g.fillRect(450, 605, 440, 280);
 			//Write menu 
