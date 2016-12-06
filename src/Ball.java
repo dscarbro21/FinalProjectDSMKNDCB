@@ -14,6 +14,7 @@ public class Ball {
 	private Point initPosition;
 	private int hits;
 	private boolean b;
+	private String lastWallHit = "";
 	
 	public final int LIFE = 80;
 	
@@ -42,6 +43,13 @@ public class Ball {
 			if (w.getOrientation() == 'H') {
 				if (w.getPoint1().getY() >= position.getY() && w.getPoint1().getY() <= position.getY() + radius*2) {
 					if (position.getX() + radius*2 >= w.getPoint1().getX() && position.getX() <= w.getPoint2().getX()) {
+						String thisWall = "";
+						if (yVelocity > 0) { thisWall = "DOWN"; }
+						else if (yVelocity < 0) { thisWall = "UP"; }
+						
+						if (thisWall.equals(lastWallHit)) { return false; }
+						
+						lastWallHit = thisWall;
 						hits++;
 						yVelocity = -yVelocity;
 						
@@ -57,6 +65,13 @@ public class Ball {
 			else if (w.getOrientation() == 'V') {
 				if (w.getPoint1().getX() >= position.getX() && w.getPoint1().getX() <= position.getX() + radius*2) {
 					if (position.getY() + radius*2 >= w.getPoint1().getY() && position.getY() <= w.getPoint2().getY()) {
+						String thisWall = "";
+						if (xVelocity > 0) { thisWall = "RIGHT"; }
+						else if (xVelocity < 0) { thisWall = "LEFT"; }
+						
+						if (thisWall.equals(lastWallHit)) { return false; }
+						
+						lastWallHit = thisWall;
 						hits++;
 						xVelocity = -xVelocity;
 						
