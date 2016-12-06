@@ -365,8 +365,15 @@ public class DisplayPanel extends JPanel {
 			}
 			
 			//draw the goal
-			g.setColor(theInstance.getStar().getColor());
-			g.fillRect(theInstance.getStar().getPosition().x, theInstance.getStar().getPosition().y, theInstance.getStar().getWinRadius(),theInstance.getStar().getWinRadius());
+			Star star = theInstance.getStar();
+			g.setColor(star.getColor());
+			g.fillRect(star.getPosition().x, star.getPosition().y, star.getWinRadius(), star.getWinRadius());
+			g.setColor(Color.BLACK);
+			g.drawLine(star.getPosition().x, star.getPosition().y + star.getWinRadius()*7/20, star.getPosition().x + star.getWinRadius(), star.getPosition().y + star.getWinRadius()*7/20);
+			g.drawLine(star.getPosition().x, star.getPosition().y + star.getWinRadius()*7/20, star.getPosition().x + star.getWinRadius()*4/5, star.getPosition().y + star.getWinRadius());
+			g.drawLine(star.getPosition().x + star.getWinRadius(), star.getPosition().y + star.getWinRadius()*7/20, star.getPosition().x + star.getWinRadius()*1/5, star.getPosition().y + star.getWinRadius());
+			g.drawLine(star.getPosition().x + star.getWinRadius()/2, star.getPosition().y, star.getPosition().x + star.getWinRadius()*1/5, star.getPosition().y + star.getWinRadius());
+			g.drawLine(star.getPosition().x + star.getWinRadius()/2, star.getPosition().y, star.getPosition().x + star.getWinRadius()*4/5, star.getPosition().y + star.getWinRadius());
 			
 			//draw the launcher
 			g.setColor(Color.BLACK);
