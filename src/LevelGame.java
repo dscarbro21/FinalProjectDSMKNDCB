@@ -294,13 +294,17 @@ public class LevelGame extends JFrame {
 		addWall(new Wall( new Point(50,200), new Point (750,200), 'H'));
 		addWall(new Wall( new Point(750,200), new Point (750,475), 'V'));
 		addWall(new Wall( new Point(150,475), new Point (750,475), 'H'));
-		addWall(new Wall( new Point(225,275), new Point (675,275), 'H'));
+		addWall(new Wall( new Point(150,275), new Point (150,475), 'V'));
+		addWall(new Wall( new Point(150,275), new Point (675,275), 'H'));
 		addWall(new Wall( new Point(225,400), new Point (675,400), 'H'));
+		addWall(new Wall( new Point(675,275), new Point (675,400), 'V'));
 
 		//goal
+		star.setPosition(new Point(450, 335));
+		star.setRadius(25);
 
 		//ball size
-		ball.setRadius(15);
+		ball.setRadius(10);
 
 	}
 
