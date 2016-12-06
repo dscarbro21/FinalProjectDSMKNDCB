@@ -101,13 +101,33 @@ JMenuItem i = new JMenuItem("Select Level");
 
 	public void setLevel(int i){
 		currentLevel = i;
-		levelChange();
 	}
-
+	public void selectLevel(int i) {
+		walls.clear();
+		switch (i) {
+		case 1:
+			level1();
+			break;
+		case 2:
+			level2();
+			break;
+		case 3:
+			level3();
+			break;
+		case 4:
+			level4();
+			break;
+		case 5:
+			level5();
+			break;
+		case 6:
+			level6();
+		}
+	}
 	public void levelChange()
 	{
 		walls.clear();
-
+		
 		switch(currentLevel)
 		{
 		case 1: 

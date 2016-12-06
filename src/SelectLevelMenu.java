@@ -49,6 +49,7 @@ public class SelectLevelMenu extends JDialog{
 		    	}
 		    	else {
 		    		game.setLevel(k);
+		    		game.selectLevel(k);
 		    		isValid = true;
 		    	}
 		    }
