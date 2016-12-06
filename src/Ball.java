@@ -104,9 +104,9 @@ public class Ball {
 	public boolean didWin() {
 		Star star = LevelGame.getInstance().getStar();
 		if(position.getX()+radius*2 >= star.getPosition().getX()
-			&& position.getX() <= star.getPosition().getX()+star.getWinRadius()*2
+			&& position.getX() <= star.getPosition().getX()+star.getWinRadius()
 			&& position.getY()+radius*2 >= star.getPosition().getY()
-			&& position.getY() <= star.getPosition().getY()+star.getWinRadius()*2)
+			&& position.getY() <= star.getPosition().getY()+star.getWinRadius())
 		{
 			LevelGame.getInstance().nextLevel();
 			JOptionPane.showMessageDialog(LevelGame.getInstance(), "You beat level " + (LevelGame.getInstance().getLevel() - 1) + "!", "", JOptionPane.INFORMATION_MESSAGE);
